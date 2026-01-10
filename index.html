@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shop POS System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h1>🏪 Shop POS & Inventory</h1>
+
+<!-- REPORT -->
+<section>
+  <h2>📊 Reports</h2>
+  <div class="report">
+    <div>Today Sale: ৳ <b id="todaySale">0</b></div>
+    <div>Today Invoices: <b id="todayInvoices">0</b></div>
+    <div>Total Sale: ৳ <b id="totalSale">0</b></div>
+  </div>
+</section>
+
+<!-- ADD PRODUCT -->
+<section>
+  <h2>Add Product</h2>
+  <input id="pName" placeholder="Product name">
+  <select id="pUnit">
+    <option value="piece">Piece</option>
+    <option value="kg">KG</option>
+  </select>
+  <input id="pPrice" type="number" placeholder="Default price">
+  <input id="pStock" type="number" placeholder="Stock qty">
+  <button id="addProductBtn">Add Product</button>
+</section>
+
+<!-- INVENTORY -->
+<section>
+  <h2>Inventory</h2>
+  <table>
+    <thead>
+      <tr><th>Name</th><th>Unit</th><th>Price</th><th>Stock</th></tr>
+    </thead>
+    <tbody id="productTable"></tbody>
+  </table>
+</section>
+
+<!-- INVOICE -->
+<section>
+  <h2>🧾 Invoice</h2>
+  <select id="sellProduct"></select>
+  <input id="sellPrice" type="number" placeholder="Sell price">
+  <input id="sellQty" type="number" placeholder="Qty">
+  <button id="addCartBtn">Add to Cart</button>
+
+  <table>
+    <thead>
+      <tr><th>Product</th><th>Price</th><th>Qty</th><th>Total</th><th>X</th></tr>
+    </thead>
+    <tbody id="cartTable"></tbody>
+  </table>
+
+  <h3>Grand Total: ৳ <span id="grandTotal">0</span></h3>
+  <button id="confirmSaleBtn">Confirm Invoice</button>
+</section>
+
+<script type="module" src="js/firebase.js"></script>
+<script type="module" src="js/inventory.js"></script>
+<script type="module" src="js/invoice.js"></script>
+<script type="module" src="js/reports.js"></script>
+</body>
+</html>

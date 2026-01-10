@@ -1,0 +1,8 @@
+body{font-family:Arial;background:#f4f6f8;padding:20px}
+h1{text-align:center}
+section{background:#fff;padding:20px;margin:20px auto;max-width:900px;border-radius:10px}
+input,select,button{padding:8px;margin:5px}
+button{background:#2563eb;color:#fff;border:none;border-radius:5px}
+table{width:100%;border-collapse:collapse;margin-top:10px}
+th,td{border:1px solid #ddd;padding:6px;text-align:center}
+.report{display:flex;justify-content:space-around}
