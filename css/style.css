@@ -1,24 +1,152 @@
+/* Base font & layout */
 body{
-  font-family:'Poppins',sans-serif;background:#f4f6f8;margin:0;padding:0;color:#333;
+  font-family:'Poppins',sans-serif;
+  background:#f4f6f8;
+  margin:0;
+  padding:0;
+  color:#333;
 }
-nav{background:#2563eb;color:#fff;display:flex;padding:12px 30px;position:sticky;top:0;z-index:1000}
-nav ul{display:flex;list-style:none;margin:0;padding:0}
-nav ul li{margin-right:25px;cursor:pointer;font-weight:600;font-size:15px;transition:color .3s}
+
+/* NAVIGATION */
+nav{
+  background:#2563eb;
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  padding:12px 20px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  flex-wrap:wrap;
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+  margin:0;
+  padding:0;
+  flex-wrap:wrap;
+}
+
+nav ul li{
+  margin-right:20px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:15px;
+  transition:color .3s;
+}
 nav ul li:hover{color:#ffbf00}
 
-.page{display:none;padding:25px;max-width:1200px;margin:20px auto;background:#fff;border-radius:15px;box-shadow:0 8px 20px rgba(0,0,0,0.08);transition:all .3s}
+/* PAGE SECTIONS */
+.page{
+  display:none;
+  padding:20px;
+  max-width:1200px;
+  margin:20px auto;
+  background:#fff;
+  border-radius:15px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transition:all .3s;
+}
 .active{display:block}
 
-.cards{display:flex;flex-wrap:wrap;gap:20px}
-.card{background:#fff;padding:18px;border-radius:15px;text-align:center;flex:1 1 200px;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:all .3s}
-.card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.15)}
+/* CARDS */
+.cards{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+}
+.card{
+  background:#fff;
+  padding:18px;
+  border-radius:15px;
+  text-align:center;
+  flex:1 1 200px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:all .3s;
+}
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
 
-table{width:100%;border-collapse:collapse;margin-top:15px;border-radius:10px;overflow:hidden}
-th,td{border:1px solid #ddd;padding:8px;text-align:center}
-th{background:#2563eb;color:#fff;font-weight:600}
+/* TABLES */
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px;
+  border-radius:10px;
+  overflow:hidden;
+  font-size:14px;
+}
+th,td{
+  border:1px solid #ddd;
+  padding:8px;
+  text-align:center;
+}
+th{
+  background:#2563eb;
+  color:#fff;
+  font-weight:600;
+}
 
-button{background:#2563eb;color:#fff;border:none;padding:8px 14px;border-radius:8px;cursor:pointer;transition:all .3s;font-weight:600}
+/* BUTTONS */
+button{
+  background:#2563eb;
+  color:#fff;
+  border:none;
+  padding:8px 14px;
+  border-radius:8px;
+  cursor:pointer;
+  transition:all .3s;
+  font-weight:600;
+}
 button:hover{background:#ffbf00;color:#2563eb}
 
-input,select{padding:7px;margin:5px;border-radius:6px;border:1px solid #ccc;outline:none}
-input:focus,select:focus{border-color:#2563eb;box-shadow:0 0 5px rgba(37,99,235,0.5)}
+/* INPUTS */
+input,select{
+  padding:7px;
+  margin:5px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  outline:none;
+  width:calc(100% - 14px);
+  box-sizing:border-box;
+}
+input:focus, select:focus{
+  border-color:#2563eb;
+  box-shadow:0 0 5px rgba(37,99,235,0.5);
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+@media screen and (max-width: 1024px){
+  .cards{flex-direction:row;flex-wrap:wrap;}
+  nav ul{justify-content:center;}
+}
+
+@media screen and (max-width: 768px){
+  nav ul{flex-direction:column;align-items:flex-start;}
+  nav ul li{margin:5px 0;}
+  .cards{flex-direction:column;}
+  input, select, button{width:100%;}
+  table, thead, tbody, th, td, tr{display:block;}
+  thead tr{display:none;}
+  tbody tr{margin-bottom:15px;border:1px solid #ddd;padding:10px;border-radius:10px;}
+  tbody td{
+    display:flex;
+    justify-content:space-between;
+    padding:6px 10px;
+    border:none;
+    border-bottom:1px solid #eee;
+  }
+  tbody td::before{content:attr(data-label);font-weight:600;}
+}
+
+/* SMALL DEVICES */
+@media screen and (max-width: 480px){
+  body{font-size:14px;}
+  nav{padding:10px;}
+  .card{padding:12px;font-size:14px;}
+  button{padding:6px 10px;font-size:14px;}
+  input, select{padding:6px;font-size:14px;}
+}
